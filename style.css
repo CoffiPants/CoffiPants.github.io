@@ -32,3 +32,15 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Style for links */
+a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Set link color to blue */
+  transition: color 0.3s; /* Add transition effect for color change */
+}
+
+/* Hover effect for links */
+a:hover {
+  color: #0056b3; /* Darker blue color on hover */
+}

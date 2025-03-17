@@ -123,6 +123,13 @@
               ><h2 class="heading-4">SKOOL</h2>
               <div class="div-block-10"></div
             ></a>
+            <a
+              data-w-id="coaching-link"
+              href="coaching/"
+              class="link-block w-inline-block"
+              ><h2 class="heading-4">COACHING</h2>
+              <div class="div-block-10"></div
+            ></a>
           </div>
         </div>
       </div>
@@ -137,5 +144,47 @@
       src="https://cdn.prod.website-files.com/669619ea703cc119c2731023/js/webflow.89d293dab.js"
       type="text/javascript"
     ></script>
+
+    <!-- Click tracking script -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Find the coaching link by its data-w-id attribute
+        const coachingLink = document.querySelector(
+          'a[data-w-id="coaching-link"]'
+        );
+
+        if (coachingLink) {
+          coachingLink.addEventListener("click", function (event) {
+            // Get current date and time for the click timestamp
+            const clickTimestamp = new Date().toISOString();
+
+            // Get existing click data from localStorage or initialize empty array
+            let clickData = JSON.parse(
+              localStorage.getItem("coachingLinkClicks") || "[]"
+            );
+
+            // Add new click data
+            clickData.push({
+              timestamp: clickTimestamp,
+              page: window.location.pathname,
+              referrer: document.referrer || "direct",
+            });
+
+            // Store updated click data back to localStorage
+            localStorage.setItem(
+              "coachingLinkClicks",
+              JSON.stringify(clickData)
+            );
+
+            // Log click for debugging (can be removed in production)
+            console.log("Coaching link clicked:", clickTimestamp);
+          });
+
+          console.log("Click tracking initialized for coaching link");
+        } else {
+          console.warn("Coaching link not found in the page");
+        }
+      });
+    </script>
   </body>
 </html>

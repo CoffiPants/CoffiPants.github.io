@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Meeting</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../alt.jpg" type="image/jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #030303;
+        color: #e8e8e8;
+      }
+
+      .container {
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+        text-shadow: 0px 0px 29px rgba(117, 117, 117, 0.5);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeInDown 0.8s forwards;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #e8e8e8;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-10px);
+        animation: fadeInDown 0.8s 0.3s forwards;
+      }
+
+      @keyframes fadeInDown {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Cal.com embed styles */
+      #my-cal-inline {
+        width: 100%;
+        min-height: 700px;
+        height: auto;
+        overflow: visible;
+      }
+
+      #my-cal-inline iframe {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 700px;
+        border: none !important;
+      }
+
+      /* Hide loading triangle */
+      .cal-loading-spinner,
+      [data-cal-position="loading"] {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+
+      /* Remove borders and unnecessary elements */
+      :root {
+        --cal-border-default: transparent !important;
+        --cal-border-booker: transparent !important;
+        --cal-bg: #030303 !important;
+        --cal-bg-dark: #030303 !important;
+        --cal-bg-emphasis: #111111 !important;
+        --cal-bg-subtle: #151515 !important;
+        --cal-bg-muted: #1a1a1a !important;
+        --cal-bg-inverted: #e8e8e8 !important;
+
+        --cal-text: #e8e8e8 !important;
+        --cal-text-emphasis: #ffffff !important;
+        --cal-text-subtle: #cccccc !important;
+        --cal-text-muted: #999999 !important;
+        --cal-text-inverted: #030303 !important;
+
+        --cal-border-emphasis: #333333 !important;
+        --cal-border-subtle: #222222 !important;
+
+        /* Header and footer specific overrides */
+        --cal-bg-booker-header: #030303 !important;
+        --cal-bg-booker-footer: #030303 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Get 500 Subscribers With Tom's Help</h1>
+      <p>
+        Book a free 45-minute call with me to evaluate your situation and see if
+        you'd be a good fit for my personal mentorship.
+      </p>
+
+      <!-- Add Wistia video here with smaller size -->
+      <div class="video-container" style="margin: 0 auto 40px; max-width: 70%">
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script
+          src="https://fast.wistia.com/embed/tw6q999qjd.js"
+          async
+          type="module"
+        ></script>
+        <style>
+          wistia-player[media-id="tw6q999qjd"]:not(:defined) {
+            background: center / contain no-repeat
+              url("https://fast.wistia.com/embed/medias/tw6q999qjd/swatch");
+            display: block;
+            filter: blur(5px);
+            padding-top: 56.25%;
+          }
+        </style>
+        <wistia-player
+          media-id="tw6q999qjd"
+          aspect="1.7777777777777777"
+        ></wistia-player>
+      </div>
+
+      <!-- Cal inline embed code begins -->
+      <div id="my-cal-inline"></div>
+    </div>
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) {
+          a.q.push(ar);
+        };
+        let d = C.document;
+        C.Cal =
+          C.Cal ||
+          function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () {
+                p(api, arguments);
+              };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+              } else p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "call", { origin: "https://cal.com" });
+
+      Cal.ns.call("inline", {
+        elementOrSelector: "#my-cal-inline",
+        config: {
+          layout: "month_view",
+          hideCalendarDate: true,
+          hideEventTypeDetails: false,
+          initialView: "month",
+          hideBranding: true,
+          theme: "dark",
+          bookerTimeFormat: "h:mma",
+          hideTooltip: false,
+          disableAutoSelectedDay: true,
+          disableAutoSelectedTime: true,
+          selectedDate: null,
+          defaultDate: null,
+          prefetchNextMonth: false,
+          disableDateSelection: true,
+          disableTimeSelection: true,
+          noDefaultTimes: true,
+        },
+        calLink: "tomstoll/call",
+      });
+
+      Cal.ns.call("ui", {
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#4882a5" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+        hideCalendarDate: true,
+        initialView: "month",
+        autoSelectTime: false,
+        disableAutoSelectedDay: true,
+        disableAutoSelectedTime: true,
+        selectedDate: null,
+        defaultDate: null,
+        prefetchNextMonth: false,
+        disableDateSelection: true,
+        disableTimeSelection: true,
+        noDefaultTimes: true,
+      });
+
+      // The calendar configuration options above should prevent auto-selection
+      // No need for complex selection clearing code
+    </script>
+    <!-- Cal inline embed code ends -->
+    <!-- Add this script just before the closing </body> tag -->
+    <script>
+      // Make tracking function available immediately globally
+      window.checkCoachingVisits = function () {
+        const visitData = JSON.parse(
+          localStorage.getItem("coachingPageVisits") || "[]"
+        );
+        console.log(
+          `Coaching page has been visited ${visitData.length} times:`
+        );
+
+        if (visitData.length > 0) {
+          console.table(visitData);
+        } else {
+          console.log("No visits recorded yet.");
+        }
+
+        return visitData;
+      };
+    </script>
+    <script>
+      // Add this function right after your checkCoachingVisits function definition
+      window.clearCoachingVisits = function () {
+        localStorage.removeItem("coachingPageVisits");
+        console.log("✅ Coaching visit data has been cleared successfully.");
+        console.log("Visit count is now reset to 0.");
+        return true;
+      };
+    </script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Record this page visit
+        const pageVisitTimestamp = new Date().toISOString();
+
+        // Get existing visit data from localStorage or initialize empty array
+        let visitData = JSON.parse(
+          localStorage.getItem("coachingPageVisits") || "[]"
+        );
+
+        // Add new visit data
+        visitData.push({
+          timestamp: pageVisitTimestamp,
+          referrer: document.referrer || "direct",
+          userAgent: navigator.userAgent,
+        });
+
+        // Store updated visit data back to localStorage
+        localStorage.setItem("coachingPageVisits", JSON.stringify(visitData));
+
+        console.log("Coaching page visit recorded:", pageVisitTimestamp);
+
+        // Add global function to check visit stats
+        window.checkCoachingVisits = function () {
+          const visitData = JSON.parse(
+            localStorage.getItem("coachingPageVisits") || "[]"
+          );
+          console.log(
+            `Coaching page has been visited ${visitData.length} times:`
+          );
+
+          if (visitData.length > 0) {
+            console.table(visitData);
+          } else {
+            console.log("No visits recorded yet.");
+          }
+
+          return visitData;
+        };
+
+        // Call the function once to show stats in console
+        setTimeout(function () {
+          console.log("--- Coaching Page Visit Stats ---");
+          checkCoachingVisits();
+        }, 1000);
+      });
+    </script>
+    <div
+      id="adminControls"
+      style="display: none; margin-top: 50px; text-align: center"
+    >
+      <hr style="border: 1px solid #333; margin: 20px 0" />
+      <h3>Admin Controls</h3>
+      <button
+        onclick="clearCoachingVisits(); return false;"
+        style="
+          background: #4882a5;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 4px;
+        "
+      >
+        Reset Visit Counter
+      </button>
+      <button
+        onclick="checkCoachingVisits(); return false;"
+        style="
+          background: #333;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-left: 10px;
+        "
+      >
+        Check Visit Stats
+      </button>
+    </div>
+
+    <script>
+      // You can show the admin panel by typing showAdmin() in the console
+      window.showAdmin = function () {
+        document.getElementById("adminControls").style.display = "block";
+        console.log(
+          "Admin controls are now visible at the bottom of the page."
+        );
+      };
+    </script>
+  </body>
+</html>

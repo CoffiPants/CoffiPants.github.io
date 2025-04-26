@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
     <title>Book a Meeting</title>
 
     <!-- Favicon -->
@@ -64,49 +67,41 @@
       /* Cal.com embed styles */
       #my-cal-inline {
         width: 100%;
-        min-height: 700px;
-        height: auto;
-        overflow: visible;
+        min-height: 750px !important;
+        height: 750px;
+        overflow: visible !important;
+        position: relative;
       }
 
       #my-cal-inline iframe {
         width: 100% !important;
-        height: 100% !important;
-        min-height: 700px;
+        height: 800px !important;
+        min-height: 800px !important;
         border: none !important;
+        overflow: visible !important;
       }
 
-      /* Hide loading triangle */
-      .cal-loading-spinner,
-      [data-cal-position="loading"] {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
+      /* Testimonials spacing */
+      .testimonials-section {
+        margin-top: -10px;
+        position: relative;
+        margin-bottom: 60px;
       }
 
-      /* Remove borders and unnecessary elements */
-      :root {
-        --cal-border-default: transparent !important;
-        --cal-border-booker: transparent !important;
-        --cal-bg: #030303 !important;
-        --cal-bg-dark: #030303 !important;
-        --cal-bg-emphasis: #111111 !important;
-        --cal-bg-subtle: #151515 !important;
-        --cal-bg-muted: #1a1a1a !important;
-        --cal-bg-inverted: #e8e8e8 !important;
+      /* Ensure the booking dialog is fully visible */
+      .cal-booking-dialog,
+      [data-cal-position="dialog"],
+      [data-testid="booking-form"],
+      [data-testid="reschedule-form"] {
+        max-height: none !important;
+        overflow: visible !important;
+      }
 
-        --cal-text: #e8e8e8 !important;
-        --cal-text-emphasis: #ffffff !important;
-        --cal-text-subtle: #cccccc !important;
-        --cal-text-muted: #999999 !important;
-        --cal-text-inverted: #030303 !important;
-
-        --cal-border-emphasis: #333333 !important;
-        --cal-border-subtle: #222222 !important;
-
-        /* Header and footer specific overrides */
-        --cal-bg-booker-header: #030303 !important;
-        --cal-bg-booker-footer: #030303 !important;
+      /* Mobile responsive video */
+      @media (max-width: 768px) {
+        wistia-player {
+          max-height: 240px;
+        }
       }
     </style>
   </head>
@@ -220,17 +215,11 @@
         disableTimeSelection: true,
         noDefaultTimes: true,
       });
-
-      // The calendar configuration options above should prevent auto-selection
-      // No need for complex selection clearing code
     </script>
     <!-- Cal inline embed code ends -->
 
-    <!-- Testemonials Section - with reduced spacing -->
-    <div
-      class="testimonials-section"
-      style="margin-top: -50px; position: relative; margin-bottom: 60px"
-    >
+    <!-- Testimonials Section -->
+    <div class="testimonials-section">
       <h2
         style="
           font-size: 2rem;
@@ -257,7 +246,7 @@
         <!-- First testimonial video -->
         <div
           class="testimonial-video"
-          style="flex: 1; min-width: 300px; max-width: 48%"
+          style="flex: 1; min-width: 300px; max-width: 48%; margin-bottom: 20px"
         >
           <script src="https://fast.wistia.com/player.js" async></script>
           <script
@@ -283,7 +272,7 @@
         <!-- Second testimonial video -->
         <div
           class="testimonial-video"
-          style="flex: 1; min-width: 300px; max-width: 48%"
+          style="flex: 1; min-width: 300px; max-width: 48%; margin-bottom: 20px"
         >
           <script src="https://fast.wistia.com/player.js" async></script>
           <script
@@ -307,82 +296,8 @@
         </div>
       </div>
     </div>
-    <!-- Add this script just before the closing </body> tag -->
-    <script>
-      // Make tracking function available immediately globally
-      window.checkCoachingVisits = function () {
-        const visitData = JSON.parse(
-          localStorage.getItem("coachingPageVisits") || "[]"
-        );
-        console.log(
-          `Coaching page has been visited ${visitData.length} times:`
-        );
 
-        if (visitData.length > 0) {
-          console.table(visitData);
-        } else {
-          console.log("No visits recorded yet.");
-        }
-
-        return visitData;
-      };
-    </script>
-    <script>
-      // Add this function right after your checkCoachingVisits function definition
-      window.clearCoachingVisits = function () {
-        localStorage.removeItem("coachingPageVisits");
-        console.log("✅ Coaching visit data has been cleared successfully.");
-        console.log("Visit count is now reset to 0.");
-        return true;
-      };
-    </script>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        // Record this page visit
-        const pageVisitTimestamp = new Date().toISOString();
-
-        // Get existing visit data from localStorage or initialize empty array
-        let visitData = JSON.parse(
-          localStorage.getItem("coachingPageVisits") || "[]"
-        );
-
-        // Add new visit data
-        visitData.push({
-          timestamp: pageVisitTimestamp,
-          referrer: document.referrer || "direct",
-          userAgent: navigator.userAgent,
-        });
-
-        // Store updated visit data back to localStorage
-        localStorage.setItem("coachingPageVisits", JSON.stringify(visitData));
-
-        console.log("Coaching page visit recorded:", pageVisitTimestamp);
-
-        // Add global function to check visit stats
-        window.checkCoachingVisits = function () {
-          const visitData = JSON.parse(
-            localStorage.getItem("coachingPageVisits") || "[]"
-          );
-          console.log(
-            `Coaching page has been visited ${visitData.length} times:`
-          );
-
-          if (visitData.length > 0) {
-            console.table(visitData);
-          } else {
-            console.log("No visits recorded yet.");
-          }
-
-          return visitData;
-        };
-
-        // Call the function once to show stats in console
-        setTimeout(function () {
-          console.log("--- Coaching Page Visit Stats ---");
-          checkCoachingVisits();
-        }, 1000);
-      });
-    </script>
+    <!-- Admin Controls (hidden by default) -->
     <div
       id="adminControls"
       style="display: none; margin-top: 50px; text-align: center"
@@ -419,12 +334,58 @@
     </div>
 
     <script>
-      // You can show the admin panel by typing showAdmin() in the console
+      // Visit tracking and admin functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Record page visit
+        const pageVisitTimestamp = new Date().toISOString();
+        let visitData = JSON.parse(
+          localStorage.getItem("coachingPageVisits") || "[]"
+        );
+        visitData.push({
+          timestamp: pageVisitTimestamp,
+          referrer: document.referrer || "direct",
+          userAgent: navigator.userAgent,
+        });
+        localStorage.setItem("coachingPageVisits", JSON.stringify(visitData));
+
+        // Setup mobile scrolling for Cal.com embed
+        const calFrame = document.querySelector("#my-cal-inline iframe");
+        if (calFrame) {
+          calFrame.style.webkitOverflowScrolling = "touch";
+          document.addEventListener(
+            "touchmove",
+            function (e) {
+              if (e.target.closest("#my-cal-inline")) e.stopPropagation();
+            },
+            { passive: true }
+          );
+        }
+      });
+
+      // Admin functions
       window.showAdmin = function () {
         document.getElementById("adminControls").style.display = "block";
-        console.log(
-          "Admin controls are now visible at the bottom of the page."
+      };
+
+      window.checkCoachingVisits = function () {
+        const visitData = JSON.parse(
+          localStorage.getItem("coachingPageVisits") || "[]"
         );
+        console.log(
+          `Coaching page has been visited ${visitData.length} times:`
+        );
+        if (visitData.length > 0) {
+          console.table(visitData);
+        } else {
+          console.log("No visits recorded yet.");
+        }
+        return visitData;
+      };
+
+      window.clearCoachingVisits = function () {
+        localStorage.removeItem("coachingPageVisits");
+        console.log("✅ Coaching visit data has been cleared successfully.");
+        return true;
       };
     </script>
   </body>

@@ -83,24 +83,32 @@
 
       /* Testimonials spacing */
       .testimonials-section {
-        margin-top: -10px;
+        margin-top: -10px; /* Negative margin works well on PC */
         position: relative;
         margin-bottom: 60px;
       }
 
-      /* Ensure the booking dialog is fully visible */
-      .cal-booking-dialog,
-      [data-cal-position="dialog"],
-      [data-testid="booking-form"],
-      [data-testid="reschedule-form"] {
-        max-height: none !important;
-        overflow: visible !important;
-      }
-
-      /* Mobile responsive video */
+      /* Mobile-specific adjustments */
       @media (max-width: 768px) {
-        wistia-player {
-          max-height: 240px;
+        /* Adjust for mobile */
+        .testimonials-section {
+          margin-top: 20px; /* Positive margin for mobile */
+        }
+
+        #my-cal-inline {
+          min-height: 650px !important; /* Slightly reduced height on mobile */
+          height: 650px;
+        }
+
+        #my-cal-inline iframe {
+          height: 650px !important;
+          min-height: 650px !important;
+        }
+
+        /* Ensure the booking form content is fully visible on mobile */
+        [data-testid="booking-form"],
+        [data-testid="reschedule-form"] {
+          padding-bottom: 40px !important;
         }
       }
     </style>

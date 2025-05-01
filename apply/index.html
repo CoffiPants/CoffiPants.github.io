@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <title>Get 500 Subscribers in 90 Days | YouTube Growth Strategy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #4882a5;
+        --primary-dark: #3a6a8a;
+        --accent: #ff5e00;
+        --accent-dark: #e55400;
+        --dark: #030303;
+        --dark-2: #121212;
+        --light: #e8e8e8;
+        --light-2: #cccccc;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        background-color: var(--dark);
+        color: var(--light);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 1rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1.2rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-accent {
+        color: var(--accent);
+      }
+
+      .text-large {
+        font-size: 1.2rem;
+      }
+
+      /* Layout */
+      .section {
+        padding: 4rem 0;
+      }
+
+      /* Reduce spacing between sections */
+      .section + .section {
+        padding-top: 2rem; /* Reduced from 4rem */
+      }
+
+      /* Specifically reduce space after video container */
+      .video-container {
+        margin-bottom: 0.5rem; /* Reduced from 1.5rem */
+      }
+
+      .section-dark {
+        background-color: var(--dark-2);
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+      }
+
+      .col {
+        padding: 0 15px;
+        flex: 1;
+      }
+
+      .col-half {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      /* Components */
+      .card {
+        background-color: var(--dark-2);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+        z-index: -1;
+      }
+
+      .btn:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .btn-accent {
+        background-color: var(--accent);
+      }
+
+      .btn-accent:hover {
+        background-color: var(--accent-dark);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 2.5rem 0 1rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        animation: fadeInDown 0.8s forwards;
+        opacity: 0;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto 1rem;
+        animation: fadeInDown 0.8s 0.3s forwards;
+        opacity: 0;
+      }
+
+      /* Video Container */
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin: 1rem auto 1.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Features */
+      .features {
+        margin: 2rem 0;
+      }
+
+      /* Testimonials */
+      .testimonial-content {
+        background-color: var(--dark-2);
+        border-radius: 8px;
+        padding: 1.5rem;
+        position: relative;
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        overflow: hidden;
+      }
+
+      .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* FAQ */
+      .faq-item {
+        margin-bottom: 1rem;
+      }
+
+      .faq-question {
+        background-color: var(--dark-2);
+        padding: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        position: relative;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background-color: rgba(72, 130, 165, 0.1);
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      .faq-answer {
+        padding: 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-item.active .faq-question {
+        background-color: rgba(72, 130, 165, 0.1);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .faq-item.active .faq-question::after {
+        content: "-";
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 1rem;
+        background-color: var(--dark-2);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      /* Booking Section */
+      .booking-section {
+        text-align: center;
+        padding: 4rem 0;
+      }
+
+      /* Reduce space above booking section */
+      #booking {
+        padding-top: 2rem; /* Reduced from 4rem */
+      }
+
+      .booking-container {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: var(--dark-2);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Cal.com embed styles */
+      #my-cal-inline {
+        width: 100%;
+        min-height: 900px !important; /* Increased from 750px */
+        height: 900px; /* Increased from 750px */
+        overflow: visible !important;
+        position: relative;
+      }
+
+      #my-cal-inline iframe {
+        width: 100% !important;
+        height: 950px !important; /* Increased from 800px */
+        min-height: 950px !important; /* Increased from 800px */
+        border: none !important;
+        overflow: visible !important;
+      }
+
+      /* Booking instructions */
+      .booking-instructions {
+        background-color: rgba(72, 130, 165, 0.1);
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        text-align: left;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 94, 0, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(255, 94, 0, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 94, 0, 0);
+        }
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--dark-2);
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* Utility Classes */
+      .mt-4 {
+        margin-top: 1rem;
+      }
+      .mb-4 {
+        margin-bottom: 2rem;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .max-w-md {
+        max-width: 768px;
+      }
+      .mb-2 {
+        margin-bottom: 0.75rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        .col-half {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 3rem 0;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        #my-cal-inline {
+          min-height: 800px !important; /* Increased from 650px */
+          height: 800px; /* Increased from 650px */
+        }
+
+        #my-cal-inline iframe {
+          height: 850px !important; /* Increased from 650px */
+          min-height: 850px !important; /* Increased from 650px */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          padding: 0 15px;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        .btn {
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Get 500 Subscribers in 90 Days</h1>
+        <p>
+          Book a free 45-minute call to see if my YouTube growth strategy is
+          right for you
+        </p>
+
+        <a href="#booking" class="btn btn-accent mb-2"
+          >Book Your Free Call Now</a
+        >
+
+        <!-- Video Container -->
+        <div class="video-container">
+          <!-- Replace with your Wistia embed code -->
+          <script
+            src="https://fast.wistia.com/embed/medias/y5dz12cq50.jsonp"
+            async
+          ></script>
+          <script
+            src="https://fast.wistia.com/assets/external/E-v1.js"
+            async
+          ></script>
+          <div
+            class="wistia_responsive_padding"
+            style="padding: 56.25% 0 0 0; position: relative"
+          >
+            <div
+              class="wistia_responsive_wrapper"
+              style="
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+              "
+            >
+              <div
+                class="wistia_embed wistia_async_y5dz12cq50 videoFoam=true"
+                style="height: 100%; position: relative; width: 100%"
+              >
+                <div
+                  class="wistia_swatch"
+                  style="
+                    height: 100%;
+                    left: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    transition: opacity 200ms;
+                    width: 100%;
+                  "
+                >
+                  <img
+                    src="https://fast.wistia.com/embed/medias/y5dz12cq50/swatch"
+                    style="
+                      filter: blur(5px);
+                      height: 100%;
+                      object-fit: contain;
+                      width: 100%;
+                    "
+                    alt=""
+                    aria-hidden="true"
+                    onload="this.parentNode.style.opacity=1;"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section section-dark" style="padding-top: 2rem">
+      <div class="container">
+        <h2 class="text-center mb-4">What You'll Get From Our Call</h2>
+
+        <div class="row features">
+          <div class="col">
+            <div class="card text-center">
+              <i
+                class="fas fa-chart-line fa-3x mb-2"
+                style="color: var(--accent)"
+              ></i>
+              <h3>Personalized Strategy</h3>
+              <p>
+                Get a customized subscriber growth plan tailored to your
+                specific content and audience.
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card text-center">
+              <i
+                class="fas fa-search fa-3x mb-2"
+                style="color: var(--accent)"
+              ></i>
+              <h3>Content Evaluation</h3>
+              <p>
+                I'll review your current content and identify key opportunities
+                for improvement and growth.
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card text-center">
+              <i
+                class="fas fa-map-marked-alt fa-3x mb-2"
+                style="color: var(--accent)"
+              ></i>
+              <h3>90-Day Roadmap</h3>
+              <p>
+                Walk away with concrete next steps to implement immediately
+                after our call.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="#booking" class="btn btn-primary">Schedule Your Free Call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-4">Here's What My Clients Have To Say</h2>
+
+        <div class="row">
+          <div class="col-half">
+            <div class="video-container mb-4">
+              <!-- Replace with your Wistia embed code -->
+              <script
+                src="https://fast.wistia.com/embed/medias/rsxwn4ac8f.jsonp"
+                async
+              ></script>
+              <script
+                src="https://fast.wistia.com/assets/external/E-v1.js"
+                async
+              ></script>
+              <div
+                class="wistia_responsive_padding"
+                style="padding: 56.25% 0 0 0; position: relative"
+              >
+                <div
+                  class="wistia_responsive_wrapper"
+                  style="
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                  "
+                >
+                  <div
+                    class="wistia_embed wistia_async_rsxwn4ac8f videoFoam=true"
+                    style="height: 100%; position: relative; width: 100%"
+                  >
+                    <div
+                      class="wistia_swatch"
+                      style="
+                        height: 100%;
+                        left: 0;
+                        opacity: 0;
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        transition: opacity 200ms;
+                        width: 100%;
+                      "
+                    >
+                      <img
+                        src="https://fast.wistia.com/embed/medias/rsxwn4ac8f/swatch"
+                        style="
+                          filter: blur(5px);
+                          height: 100%;
+                          object-fit: contain;
+                          width: 100%;
+                        "
+                        alt=""
+                        aria-hidden="true"
+                        onload="this.parentNode.style.opacity=1;"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-half">
+            <div class="video-container mb-4">
+              <!-- Replace with your Wistia embed code -->
+              <script
+                src="https://fast.wistia.com/embed/medias/uh73bhfwqi.jsonp"
+                async
+              ></script>
+              <script
+                src="https://fast.wistia.com/assets/external/E-v1.js"
+                async
+              ></script>
+              <div
+                class="wistia_responsive_padding"
+                style="padding: 56.56% 0 0 0; position: relative"
+              >
+                <div
+                  class="wistia_responsive_wrapper"
+                  style="
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                  "
+                >
+                  <div
+                    class="wistia_embed wistia_async_uh73bhfwqi videoFoam=true"
+                    style="height: 100%; position: relative; width: 100%"
+                  >
+                    <div
+                      class="wistia_swatch"
+                      style="
+                        height: 100%;
+                        left: 0;
+                        opacity: 0;
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        transition: opacity 200ms;
+                        width: 100%;
+                      "
+                    >
+                      <img
+                        src="https://fast.wistia.com/embed/medias/uh73bhfwqi/swatch"
+                        style="
+                          filter: blur(5px);
+                          height: 100%;
+                          object-fit: contain;
+                          width: 100%;
+                        "
+                        alt=""
+                        aria-hidden="true"
+                        onload="this.parentNode.style.opacity=1;"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="#booking" class="btn btn-accent"
+            >Join Them & Book Your Call Now</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section
+      id="booking"
+      class="section booking-section"
+      style="padding-top: 2rem"
+    >
+      <div class="container">
+        <h2>Ready to Grow Your YouTube Channel?</h2>
+        <p class="text-large max-w-md mx-auto mb-4">
+          Book your free 45-minute strategy call now and take the first step
+          toward reaching 500 subscribers in 90 days.
+        </p>
+
+        <div class="booking-container">
+          <!-- Booking instructions -->
+          <div class="booking-instructions">
+            <p style="margin-bottom: 10px; font-weight: 600">
+              <i class="fas fa-info-circle" style="color: var(--primary)"></i>
+              How to book your call:
+            </p>
+            <ol style="margin-left: 25px; margin-bottom: 0">
+              <li>Select a date from the calendar</li>
+              <li>
+                <strong>Scroll down</strong> to see available time slots
+                <i class="fas fa-arrow-down" style="color: var(--accent)"></i>
+              </li>
+              <li>Choose a time that works for you</li>
+              <li>Fill in your details and confirm</li>
+            </ol>
+          </div>
+
+          <!-- Cal inline embed code begins -->
+          <div id="my-cal-inline"></div>
+          <script type="text/javascript">
+            (function (C, A, L) {
+              let p = function (a, ar) {
+                a.q.push(ar);
+              };
+              let d = C.document;
+              C.Cal =
+                C.Cal ||
+                function () {
+                  let cal = C.Cal;
+                  let ar = arguments;
+                  if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                  }
+                  if (ar[0] === L) {
+                    const api = function () {
+                      p(api, arguments);
+                    };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    if (typeof namespace === "string") {
+                      cal.ns[namespace] = cal.ns[namespace] || api;
+                      p(cal.ns[namespace], ar);
+                      p(cal, ["initNamespace", namespace]);
+                    } else p(cal, ar);
+                    return;
+                  }
+                  p(cal, ar);
+                };
+            })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "call", { origin: "https://cal.com" });
+
+            Cal.ns.call("inline", {
+              elementOrSelector: "#my-cal-inline",
+              config: {
+                layout: "month_view",
+                hideCalendarDate: true,
+                hideEventTypeDetails: false,
+                initialView: "month",
+                hideBranding: true,
+                theme: "dark",
+                bookerTimeFormat: "h:mma",
+                hideTooltip: false,
+                disableAutoSelectedDay: true,
+                disableAutoSelectedTime: true,
+                selectedDate: null,
+                defaultDate: null,
+                prefetchNextMonth: false,
+                disableDateSelection: true,
+                disableTimeSelection: true,
+                noDefaultTimes: true,
+              },
+              calLink: "tomstoll/call",
+            });
+
+            Cal.ns.call("ui", {
+              cssVarsPerTheme: {
+                light: { "cal-brand": "#292929" },
+                dark: { "cal-brand": "#4882a5" },
+              },
+              hideEventTypeDetails: false,
+              layout: "month_view",
+              hideCalendarDate: true,
+              initialView: "month",
+              autoSelectTime: false,
+              disableAutoSelectedDay: true,
+              disableAutoSelectedTime: true,
+              selectedDate: null,
+              defaultDate: null,
+              prefetchNextMonth: false,
+              disableDateSelection: true,
+              disableTimeSelection: true,
+              noDefaultTimes: true,
+            });
+
+            // Add a visual indicator to scroll down after date selection
+            document.addEventListener("click", function (e) {
+              // Check if the clicked element is a date in the calendar
+              if (
+                e.target.closest('[data-testid="day"]') ||
+                e.target.closest('[data-testid="date-picker-day"]')
+              ) {
+                // Wait a moment for the times to load
+                setTimeout(function () {
+                  // Create scroll indicator if it doesn't exist
+                  if (!document.getElementById("scroll-indicator")) {
+                    const indicator = document.createElement("div");
+                    indicator.id = "scroll-indicator";
+                    indicator.innerHTML =
+                      '<div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--accent); color: white; padding: 10px 20px; border-radius: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; animation: bounce 2s infinite;"><i class="fas fa-arrow-down"></i> Scroll down to see available times</div>';
+
+                    // Add the bounce animation
+                    const style = document.createElement("style");
+                    style.textContent = `
+                      @keyframes bounce {
+                        0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+                        40% {transform: translateY(-10px);}
+                        60% {transform: translateY(-5px);}
+                      }
+                    `;
+                    document.head.appendChild(style);
+
+                    document.body.appendChild(indicator);
+
+                    // Remove after 5 seconds
+                    setTimeout(function () {
+                      indicator.remove();
+                    }, 5000);
+                  }
+                }, 500);
+              }
+            });
+          </script>
+          <!-- Cal inline embed code ends -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-dark" style="padding-top: 2rem">
+      <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+
+        <div class="max-w-md mx-auto">
+          <div class="faq-item active">
+            <div class="faq-question">
+              What happens during the free strategy call?
+            </div>
+            <div class="faq-answer">
+              <p>
+                During our 45-minute call, I'll ask you questions about your
+                content, goals, and current challenges. We'll analyze what's
+                working and what's not, and I'll provide immediate actionable
+                tips you can implement. By the end of the call, we'll both know
+                if my coaching program is a good fit for your needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              How long does it typically take to reach 500 subscribers?
+            </div>
+            <div class="faq-answer">
+              <p>
+                My program is designed to help you reach 500 subscribers within
+                90 days. Results vary based on your niche, current content
+                quality, and how consistently you implement the strategies. Most
+                clients see significant growth within the first month of working
+                together.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What if I'm just starting out with no subscribers?
+            </div>
+            <div class="faq-answer">
+              <p>
+                My strategies work for creators at all levels. If you're just
+                starting out, we'll focus on building a strong foundation that
+                attracts subscribers from day one. The advantage of starting
+                from zero is that we can implement best practices from the
+                beginning without having to fix existing issues.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What does your coaching program include?
+            </div>
+            <div class="faq-answer">
+              <p>
+                My coaching program includes bi-weekly 1-on-1 coaching calls,
+                content reviews with detailed feedback, a customized growth
+                strategy, and ongoing support via email between sessions. I
+                limit the number of clients I work with to ensure each person
+                gets my full attention and customized guidance.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              How much does the coaching program cost?
+            </div>
+            <div class="faq-answer">
+              <p>
+                I offer different program options based on your specific needs
+                and goals. Investment typically ranges from $350-$500 per month
+                with a 3-month minimum commitment. During our free strategy
+                call, I'll learn more about your situation and recommend the
+                best option for you.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What if I can't make any of the available call times?
+            </div>
+            <div class="faq-answer">
+              <p>
+                If none of the available times work for you, please email me and
+                we'll find a time that fits your schedule. I understand the need
+                for flexibility with different time zones and commitments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Tom Stoll. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // FAQ Accordion
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            // Close all items
+            faqItems.forEach((faqItem) => {
+              faqItem.classList.remove("active");
+            });
+
+            // If the clicked item wasn't active, make it active
+            if (!isActive) {
+              item.classList.add("active");
+            }
+          });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Record page visit
+        const pageVisitTimestamp = new Date().toISOString();
+        let visitData = JSON.parse(
+          localStorage.getItem("coachingPageVisits") || "[]"
+        );
+        visitData.push({
+          timestamp: pageVisitTimestamp,
+          referrer: document.referrer || "direct",
+          userAgent: navigator.userAgent,
+        });
+        localStorage.setItem("coachingPageVisits", JSON.stringify(visitData));
+      });
+
+      // Admin functions
+      window.showAdmin = function () {
+        const adminControls = document.createElement("div");
+        adminControls.id = "adminControls";
+        adminControls.style.padding = "20px";
+        adminControls.style.margin = "20px auto";
+        adminControls.style.maxWidth = "800px";
+        adminControls.style.backgroundColor = "var(--dark-2)";
+        adminControls.style.borderRadius = "8px";
+        adminControls.style.textAlign = "center";
+
+        adminControls.innerHTML = `
+        <h3>Admin Controls</h3>
+        <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+          <button onclick="clearCoachingVisits(); return false;" style="background: var(--primary); color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">
+            Reset Visit Counter
+          </button>
+          <button onclick="checkCoachingVisits(); return false;" style="background: var(--dark-3); color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">
+            Check Visit Stats
+          </button>
+        </div>
+      `;
+
+        document.body.appendChild(adminControls);
+      };
+
+      window.checkCoachingVisits = function () {
+        const visitData = JSON.parse(
+          localStorage.getItem("coachingPageVisits") || "[]"
+        );
+        console.log(
+          `Coaching page has been visited ${visitData.length} times:`
+        );
+        if (visitData.length > 0) {
+          console.table(visitData);
+        } else {
+          console.log("No visits recorded yet.");
+        }
+        return visitData;
+      };
+
+      window.clearCoachingVisits = function () {
+        localStorage.removeItem("coachingPageVisits");
+        console.log("✅ Coaching visit data has been cleared successfully.");
+        return true;
+      };
+    </script>
+  </body>
+</html>

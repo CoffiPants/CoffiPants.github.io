@@ -14,90 +14,203 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <style>
-      body {
-        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Helvetica, Arial, sans-serif;
-        line-height: 1.6;
+      :root {
+        --primary: #81a4c8;
+        --primary-dark: #6789b0;
+        --dark: #000000;
+        --light: #ffffff;
+        --gray: #111111;
+      }
+
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background-color: #030303;
-        color: #e8e8e8;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.5;
+        background-color: #000000;
+        color: var(--light);
       }
 
       .container {
-        max-width: 100%;
-        margin: 40px auto;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
         padding: 0 20px;
       }
 
+      /* Typography */
       h1 {
-        font-size: 2.5rem;
-        font-weight: 600;
+        font-size: 3.2rem;
+        font-weight: 800;
+        line-height: 1.1;
         margin-bottom: 1.5rem;
-        color: #ffffff;
-        text-shadow: 0px 0px 29px rgba(117, 117, 117, 0.5);
         text-align: center;
-        opacity: 0;
-        transform: translateY(-20px);
-        animation: fadeInDown 0.8s forwards;
+        background: linear-gradient(120deg, #81a4c8, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 2px 20px rgba(129, 164, 200, 0.4);
+        letter-spacing: -0.03em;
+        padding: 0.5rem 0;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        text-align: center;
       }
 
       p {
-        font-size: 1.2rem;
-        color: #e8e8e8;
-        margin-bottom: 2rem;
-        font-weight: 500;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
         text-align: center;
-        opacity: 0;
-        transform: translateY(-10px);
-        animation: fadeInDown 0.8s 0.3s forwards;
       }
 
-      @keyframes fadeInDown {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      /* Layout */
+      .section {
+        padding: 3rem 0;
+        text-align: center;
       }
 
-      /* Cal.com embed styles */
+      .hero {
+        padding: 2rem 0;
+      }
+
+      /* Video Container */
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 1.5rem auto;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+        aspect-ratio: 16 / 9;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Wistia Video Enhancement */
+      .wistia_responsive_wrapper {
+        transition: opacity 0.3s ease;
+      }
+
+      .wistia_embed {
+        background-color: #111111;
+      }
+
+      /* Booking Section */
+      .booking-section {
+        background-color: var(--gray);
+        padding: 3rem 0;
+      }
+
       #my-cal-inline {
         width: 100%;
-        min-height: 750px !important;
-        height: 750px;
+        max-width: 900px;
+        min-height: 700px !important;
+        height: 700px;
         overflow: visible !important;
         position: relative;
+        margin: 1.5rem auto;
+        background-color: #111111;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
       }
 
       #my-cal-inline iframe {
         width: 100% !important;
-        height: 800px !important;
-        min-height: 800px !important;
+        height: 750px !important;
+        min-height: 750px !important;
         border: none !important;
         overflow: visible !important;
+        border-radius: 8px;
       }
 
-      /* Testimonials spacing */
-      .testimonials-section {
-        margin-top: -10px; /* Negative margin works well on PC */
+      /* Calendar Loading State */
+      #my-cal-inline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #111111;
+        z-index: -1;
+        border-radius: 8px;
+      }
+
+      /* Social Proof Section */
+      .social-proof {
+        padding: 3rem 0;
+        background-color: #000000;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .testimonial-video {
         position: relative;
-        margin-bottom: 60px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
       }
 
-      /* Mobile-specific adjustments */
+      /* Footer */
+      .footer {
+        padding: 1.5rem 0;
+        text-align: center;
+        color: #999;
+        font-size: 0.9rem;
+        background-color: var(--gray);
+      }
+
+      /* Responsive */
       @media (max-width: 768px) {
-        /* Adjust for mobile */
-        .testimonials-section {
-          margin-top: 20px; /* Positive margin for mobile */
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        .testimonial-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
         }
 
         #my-cal-inline {
-          min-height: 650px !important; /* Slightly reduced height on mobile */
-          height: 650px;
+          min-height: 600px !important;
+          height: 600px;
         }
 
         #my-cal-inline iframe {
@@ -105,245 +218,348 @@
           min-height: 650px !important;
         }
 
-        /* Ensure the booking form content is fully visible on mobile */
-        [data-testid="booking-form"],
-        [data-testid="reschedule-form"] {
-          padding-bottom: 40px !important;
+        .section {
+          padding: 2rem 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          padding: 0 15px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .hero {
+          padding: 1.5rem 0;
+        }
+
+        .booking-section,
+        .social-proof {
+          padding: 2rem 0;
         }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Get 500 Subscribers With Tom's Help</h1>
-      <p>
-        Book a free 45-minute call with me to evaluate your situation and see if
-        you'd be a good fit for my personal mentorship.
-      </p>
+    <!-- Hero Section - VSL -->
+    <section class="hero">
+      <div class="container">
+        <h1>Get 500 Subscribers in 90 Days</h1>
+        <h2>Step 1: Watch this video</h2>
 
-      <div style="max-width: 800px; margin: 30px auto">
-        <script src="https://fast.wistia.com/player.js" async></script>
-        <script
-          src="https://fast.wistia.com/embed/y5dz12cq50.js"
-          async
-          type="module"
-        ></script>
-        <style>
-          wistia-player[media-id="y5dz12cq50"]:not(:defined) {
-            background: center / contain no-repeat
-              url("https://fast.wistia.com/embed/medias/y5dz12cq50/swatch");
-            display: block;
-            filter: blur(5px);
-            padding-top: 56.25%;
-          }
-        </style>
-        <wistia-player
-          media-id="y5dz12cq50"
-          aspect="1.7777777777777777"
-        ></wistia-player>
+        <!-- Video Sales Letter -->
+        <div class="video-container">
+          <script
+            src="https://fast.wistia.com/embed/medias/y5dz12cq50.jsonp"
+            async
+          ></script>
+          <script
+            src="https://fast.wistia.com/assets/external/E-v1.js"
+            async
+          ></script>
+          <div
+            class="wistia_responsive_padding"
+            style="padding: 56.25% 0 0 0; position: relative"
+          >
+            <div
+              class="wistia_responsive_wrapper"
+              style="
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+              "
+            >
+              <div
+                class="wistia_embed wistia_async_y5dz12cq50 videoFoam=true"
+                style="height: 100%; position: relative; width: 100%"
+              >
+                <div
+                  class="wistia_swatch"
+                  style="
+                    height: 100%;
+                    left: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    transition: opacity 200ms;
+                    width: 100%;
+                  "
+                >
+                  <img
+                    src="https://fast.wistia.com/embed/medias/y5dz12cq50/swatch"
+                    style="
+                      filter: blur(5px);
+                      height: 100%;
+                      object-fit: contain;
+                      width: 100%;
+                    "
+                    alt=""
+                    aria-hidden="true"
+                    onload="this.parentNode.style.opacity=1;"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Cal inline embed code begins -->
-      <div id="my-cal-inline"></div>
-    </div>
-    <script type="text/javascript">
-      (function (C, A, L) {
-        let p = function (a, ar) {
-          a.q.push(ar);
-        };
-        let d = C.document;
-        C.Cal =
-          C.Cal ||
-          function () {
-            let cal = C.Cal;
-            let ar = arguments;
-            if (!cal.loaded) {
-              cal.ns = {};
-              cal.q = cal.q || [];
-              d.head.appendChild(d.createElement("script")).src = A;
-              cal.loaded = true;
-            }
-            if (ar[0] === L) {
-              const api = function () {
-                p(api, arguments);
+    <!-- Booking Section - Cal.com scheduler -->
+    <section id="booking" class="booking-section">
+      <div class="container">
+        <h2>Step 2: Book A Free Discovery Call</h2>
+        <p>Choose a time that works for you.</p>
+
+        <!-- Cal inline embed code begins -->
+        <div id="my-cal-inline"></div>
+        <script type="text/javascript">
+          (function (C, A, L) {
+            let p = function (a, ar) {
+              a.q.push(ar);
+            };
+            let d = C.document;
+            C.Cal =
+              C.Cal ||
+              function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                  cal.ns = {};
+                  cal.q = cal.q || [];
+                  d.head.appendChild(d.createElement("script")).src = A;
+                  cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                  const api = function () {
+                    p(api, arguments);
+                  };
+                  const namespace = ar[1];
+                  api.q = api.q || [];
+                  if (typeof namespace === "string") {
+                    cal.ns[namespace] = cal.ns[namespace] || api;
+                    p(cal.ns[namespace], ar);
+                    p(cal, ["initNamespace", namespace]);
+                  } else p(cal, ar);
+                  return;
+                }
+                p(cal, ar);
               };
-              const namespace = ar[1];
-              api.q = api.q || [];
-              if (typeof namespace === "string") {
-                cal.ns[namespace] = cal.ns[namespace] || api;
-                p(cal.ns[namespace], ar);
-                p(cal, ["initNamespace", namespace]);
-              } else p(cal, ar);
-              return;
-            }
-            p(cal, ar);
-          };
-      })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "call", { origin: "https://cal.com" });
+          })(window, "https://app.cal.com/embed/embed.js", "init");
+          Cal("init", "call", { origin: "https://cal.com" });
 
-      Cal.ns.call("inline", {
-        elementOrSelector: "#my-cal-inline",
-        config: {
-          layout: "month_view",
-          hideCalendarDate: true,
-          hideEventTypeDetails: false,
-          initialView: "month",
-          hideBranding: true,
-          theme: "dark",
-          bookerTimeFormat: "h:mma",
-          hideTooltip: false,
-          disableAutoSelectedDay: true,
-          disableAutoSelectedTime: true,
-          selectedDate: null,
-          defaultDate: null,
-          prefetchNextMonth: false,
-          disableDateSelection: true,
-          disableTimeSelection: true,
-          noDefaultTimes: true,
-        },
-        calLink: "tomstoll/call",
-      });
+          Cal.ns.call("inline", {
+            elementOrSelector: "#my-cal-inline",
+            config: {
+              layout: "column_view",
+              hideCalendarDate: false,
+              hideEventTypeDetails: false,
+              initialView: "week",
+              hideBranding: true,
+              theme: "dark",
+              bookerTimeFormat: "h:mma",
+              colorScheme: "dark",
+              brandColor: "#81A4C8",
+              prefill: {
+                email: "",
+                name: "",
+              },
+            },
+            calLink: "tomstoll/call",
+          });
 
-      Cal.ns.call("ui", {
-        cssVarsPerTheme: {
-          light: { "cal-brand": "#292929" },
-          dark: { "cal-brand": "#4882a5" },
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-        hideCalendarDate: true,
-        initialView: "month",
-        autoSelectTime: false,
-        disableAutoSelectedDay: true,
-        disableAutoSelectedTime: true,
-        selectedDate: null,
-        defaultDate: null,
-        prefetchNextMonth: false,
-        disableDateSelection: true,
-        disableTimeSelection: true,
-        noDefaultTimes: true,
-      });
-    </script>
-    <!-- Cal inline embed code ends -->
+          Cal.ns.call("ui", {
+            styles: {
+              body: {
+                background: "#111111",
+              },
+              branding: {
+                display: "none",
+              },
+              margin: "0",
+            },
+            cssVarsPerTheme: {
+              light: {
+                "cal-brand": "#81A4C8",
+                "cal-bg": "#111111",
+                "cal-border": "#333333",
+              },
+              dark: {
+                "cal-brand": "#81A4C8",
+                "cal-bg": "#111111",
+                "cal-text": "#ffffff",
+                "cal-border": "#333333",
+              },
+            },
+          });
+        </script>
+        <!-- Cal inline embed code ends -->
+      </div>
+    </section>
 
-    <!-- Testimonials Section -->
-    <div class="testimonials-section">
-      <h2
-        style="
-          font-size: 2rem;
-          font-weight: 600;
-          margin-bottom: 30px;
-          text-align: center;
-          color: #ffffff;
-          text-shadow: 0px 0px 29px rgba(117, 117, 117, 0.5);
-        "
-      >
-        Here's What My Clients Have To Say
-      </h2>
-      <div
-        class="testimonials-container"
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          justify-content: center;
-          max-width: 1200px;
-          margin: 0 auto;
-        "
-      >
-        <!-- First testimonial video -->
-        <div
-          class="testimonial-video"
-          style="flex: 1; min-width: 300px; max-width: 48%; margin-bottom: 20px"
-        >
-          <script src="https://fast.wistia.com/player.js" async></script>
-          <script
-            src="https://fast.wistia.com/embed/rsxwn4ac8f.js"
-            async
-            type="module"
-          ></script>
-          <style>
-            wistia-player[media-id="rsxwn4ac8f"]:not(:defined) {
-              background: center / contain no-repeat
-                url("https://fast.wistia.com/embed/medias/rsxwn4ac8f/swatch");
-              display: block;
-              filter: blur(5px);
-              padding-top: 56.25%;
-            }
-          </style>
-          <wistia-player
-            media-id="rsxwn4ac8f"
-            aspect="1.7777777777777777"
-          ></wistia-player>
-        </div>
+    <!-- Social Proof Section - Testimonial videos -->
+    <section class="social-proof">
+      <div class="container">
+        <h2>Success Stories</h2>
+        <p>See what my clients have achieved</p>
 
-        <!-- Second testimonial video -->
-        <div
-          class="testimonial-video"
-          style="flex: 1; min-width: 300px; max-width: 48%; margin-bottom: 20px"
-        >
-          <script src="https://fast.wistia.com/player.js" async></script>
-          <script
-            src="https://fast.wistia.com/embed/uh73bhfwqi.js"
-            async
-            type="module"
-          ></script>
-          <style>
-            wistia-player[media-id="uh73bhfwqi"]:not(:defined) {
-              background: center / contain no-repeat
-                url("https://fast.wistia.com/embed/medias/uh73bhfwqi/swatch");
-              display: block;
-              filter: blur(5px);
-              padding-top: 56.56%;
-            }
-          </style>
-          <wistia-player
-            media-id="uh73bhfwqi"
-            aspect="1.7679558011049723"
-          ></wistia-player>
+        <div class="testimonial-grid">
+          <div class="testimonial-video">
+            <script
+              src="https://fast.wistia.com/embed/medias/rsxwn4ac8f.jsonp"
+              async
+            ></script>
+            <script
+              src="https://fast.wistia.com/assets/external/E-v1.js"
+              async
+            ></script>
+            <div
+              class="wistia_responsive_padding"
+              style="padding: 56.25% 0 0 0; position: relative"
+            >
+              <div
+                class="wistia_responsive_wrapper"
+                style="
+                  height: 100%;
+                  left: 0;
+                  position: absolute;
+                  top: 0;
+                  width: 100%;
+                "
+              >
+                <div
+                  class="wistia_embed wistia_async_rsxwn4ac8f videoFoam=true"
+                  style="height: 100%; position: relative; width: 100%"
+                >
+                  <div
+                    class="wistia_swatch"
+                    style="
+                      height: 100%;
+                      left: 0;
+                      opacity: 0;
+                      overflow: hidden;
+                      position: absolute;
+                      top: 0;
+                      transition: opacity 200ms;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      src="https://fast.wistia.com/embed/medias/rsxwn4ac8f/swatch"
+                      style="
+                        filter: blur(5px);
+                        height: 100%;
+                        object-fit: contain;
+                        width: 100%;
+                      "
+                      alt=""
+                      aria-hidden="true"
+                      onload="this.parentNode.style.opacity=1;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-video">
+            <script
+              src="https://fast.wistia.com/embed/medias/uh73bhfwqi.jsonp"
+              async
+            ></script>
+            <script
+              src="https://fast.wistia.com/assets/external/E-v1.js"
+              async
+            ></script>
+            <div
+              class="wistia_responsive_padding"
+              style="padding: 56.56% 0 0 0; position: relative"
+            >
+              <div
+                class="wistia_responsive_wrapper"
+                style="
+                  height: 100%;
+                  left: 0;
+                  position: absolute;
+                  top: 0;
+                  width: 100%;
+                "
+              >
+                <div
+                  class="wistia_embed wistia_async_uh73bhfwqi videoFoam=true"
+                  style="height: 100%; position: relative; width: 100%"
+                >
+                  <div
+                    class="wistia_swatch"
+                    style="
+                      height: 100%;
+                      left: 0;
+                      opacity: 0;
+                      overflow: hidden;
+                      position: absolute;
+                      top: 0;
+                      transition: opacity 200ms;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      src="https://fast.wistia.com/embed/medias/uh73bhfwqi/swatch"
+                      style="
+                        filter: blur(5px);
+                        height: 100%;
+                        object-fit: contain;
+                        width: 100%;
+                      "
+                      alt=""
+                      aria-hidden="true"
+                      onload="this.parentNode.style.opacity=1;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Admin Controls (hidden by default) -->
-    <div
-      id="adminControls"
-      style="display: none; margin-top: 50px; text-align: center"
-    >
-      <hr style="border: 1px solid #333; margin: 20px 0" />
-      <h3>Admin Controls</h3>
-      <button
-        onclick="clearCoachingVisits(); return false;"
-        style="
-          background: #4882a5;
-          color: #fff;
-          border: none;
-          padding: 10px 20px;
-          cursor: pointer;
-          border-radius: 4px;
-        "
-      >
-        Reset Visit Counter
-      </button>
-      <button
-        onclick="checkCoachingVisits(); return false;"
-        style="
-          background: #333;
-          color: #fff;
-          border: none;
-          padding: 10px 20px;
-          cursor: pointer;
-          border-radius: 4px;
-          margin-left: 10px;
-        "
-      >
-        Check Visit Stats
-      </button>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Tom Stoll. All rights reserved.</p>
+      </div>
+    </footer>
 
+    <!-- JavaScript -->
     <script>
-      // Visit tracking and admin functionality
+      // Smooth scroll for anchor links
       document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 50,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
         // Record page visit
         const pageVisitTimestamp = new Date().toISOString();
         let visitData = JSON.parse(
@@ -355,24 +571,32 @@
           userAgent: navigator.userAgent,
         });
         localStorage.setItem("coachingPageVisits", JSON.stringify(visitData));
-
-        // Setup mobile scrolling for Cal.com embed
-        const calFrame = document.querySelector("#my-cal-inline iframe");
-        if (calFrame) {
-          calFrame.style.webkitOverflowScrolling = "touch";
-          document.addEventListener(
-            "touchmove",
-            function (e) {
-              if (e.target.closest("#my-cal-inline")) e.stopPropagation();
-            },
-            { passive: true }
-          );
-        }
       });
 
       // Admin functions
       window.showAdmin = function () {
-        document.getElementById("adminControls").style.display = "block";
+        const adminControls = document.createElement("div");
+        adminControls.id = "adminControls";
+        adminControls.style.padding = "20px";
+        adminControls.style.margin = "20px auto";
+        adminControls.style.maxWidth = "800px";
+        adminControls.style.backgroundColor = "#f8f9fa";
+        adminControls.style.borderRadius = "8px";
+        adminControls.style.textAlign = "center";
+
+        adminControls.innerHTML = `
+        <h3>Admin Controls</h3>
+        <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+          <button onclick="clearCoachingVisits(); return false;" style="background: var(--primary); color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">
+            Reset Visit Counter
+          </button>
+          <button onclick="checkCoachingVisits(); return false;" style="background: #666; color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">
+            Check Visit Stats
+          </button>
+        </div>
+      `;
+
+        document.body.appendChild(adminControls);
       };
 
       window.checkCoachingVisits = function () {

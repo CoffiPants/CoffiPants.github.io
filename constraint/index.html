@@ -203,5 +203,44 @@
         layout: "month_view",
       });
     </script>
+
+    <script>
+      // Visit tracking for constraint page
+      document.addEventListener("DOMContentLoaded", function () {
+        // Record page visit
+        const pageVisitTimestamp = new Date().toISOString();
+        let visitData = JSON.parse(
+          localStorage.getItem("constraintPageVisits") || "[]"
+        );
+        visitData.push({
+          timestamp: pageVisitTimestamp,
+          referrer: document.referrer || "direct",
+          userAgent: navigator.userAgent,
+        });
+        localStorage.setItem("constraintPageVisits", JSON.stringify(visitData));
+      });
+
+      // Admin functions for constraint page
+      window.checkConstraintVisits = function () {
+        const visitData = JSON.parse(
+          localStorage.getItem("constraintPageVisits") || "[]"
+        );
+        console.log(
+          `Constraint page has been visited ${visitData.length} times:`
+        );
+        if (visitData.length > 0) {
+          console.table(visitData);
+        } else {
+          console.log("No visits recorded yet.");
+        }
+        return visitData;
+      };
+
+      window.clearConstraintVisits = function () {
+        localStorage.removeItem("constraintPageVisits");
+        console.log("✅ Constraint visit data has been cleared successfully.");
+        return true;
+      };
+    </script>
   </body>
 </html>

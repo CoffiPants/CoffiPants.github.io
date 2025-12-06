@@ -131,7 +131,7 @@
     <section class="py-12 px-4 bg-black">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
-          Trusted by 50+ Channel Reviews
+          Trusted by 100+ Creators
         </h2>
         <div class="flex justify-center mb-8">
           <img
@@ -368,7 +368,9 @@ ${this.getHourlyBreakdown()}
             }
           }
 
-          return maxVisits > 0 ? `${maxHour}:00 (${maxVisits} visits)` : "No data";
+          return maxVisits > 0
+            ? `${maxHour}:00 (${maxVisits} visits)`
+            : "No data";
         }
 
         getLast7DaysStats() {
@@ -384,7 +386,9 @@ ${this.getHourlyBreakdown()}
             const dayName = date.toLocaleDateString("en", { weekday: "short" });
 
             last7Days.push(
-              `├─ ${dayName} ${date.getMonth() + 1}/${date.getDate()}: ${visits} visits`
+              `├─ ${dayName} ${
+                date.getMonth() + 1
+              }/${date.getDate()}: ${visits} visits`
             );
           }
 
@@ -400,7 +404,9 @@ ${this.getHourlyBreakdown()}
             const bar = "█".repeat(Math.min(visits, 20));
             const padding = " ".repeat(Math.max(0, 20 - visits));
             hours.push(
-              `├─ ${i.toString().padStart(2, "0")}:00 │${bar}${padding}│ ${visits}`
+              `├─ ${i
+                .toString()
+                .padStart(2, "0")}:00 │${bar}${padding}│ ${visits}`
             );
           }
 
@@ -418,7 +424,8 @@ ${this.getHourlyBreakdown()}
             const dateStr = date.toDateString();
             const visits = stats.dailyVisits[dateStr] || 0;
             const dayName = date.toLocaleDateString("en", { weekday: "short" });
-            const bar = "🟦".repeat(visits) + "⬜".repeat(Math.max(0, 10 - visits));
+            const bar =
+              "🟦".repeat(visits) + "⬜".repeat(Math.max(0, 10 - visits));
 
             console.log(`${dayName} │ ${bar} │ ${visits}`);
           }
@@ -448,9 +455,9 @@ ${this.getHourlyBreakdown()}
           const url = URL.createObjectURL(blob);
           const a = document.createElement("a");
           a.href = url;
-          a.download = `constraint-page-stats-${new Date()
-            .toISOString()
-            .split("T")[0]}.json`;
+          a.download = `constraint-page-stats-${
+            new Date().toISOString().split("T")[0]
+          }.json`;
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
